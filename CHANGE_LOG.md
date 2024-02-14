@@ -13,24 +13,24 @@ Was already implemented, `CreatePersonPreProcessor` to be configured in `Program
 
 > A Person who has not had an astronaut assignment will not have Astronaut records.
 
-_
+already implemented, no changes required.
 
 > A Person will only ever hold one current Astronaut Duty Title, Start Date, and Rank at a time.
 
-_
+This is true by utilizing the `AstronautDetail` table.
 
 > A Person's Current Duty will not have a Duty End Date.
 
-_
+Already implemented in `CreateAstronautDuty`.
 
 > A Person's Previous Duty End Date is set to the day before the New Astronaut Duty Start Date when a new Astronaut Duty is received for a Person.
 
-_
+Already implemented in `CreateAstronautDuty`.
 
 > A Person is classified as 'Retired' when a Duty Title is 'RETIRED'.
 
-_
+Already implemented in `CreateAstronautDuty`.
 
 > A Person's Career End Date is one day before the Retired Duty Start Date.
 
-_
+Already implemented in `CreateAstronautDuty`.
