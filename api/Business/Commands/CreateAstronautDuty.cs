@@ -10,6 +10,9 @@ namespace StargateAPI.Business.Commands
 {
     public class CreateAstronautDuty : IRequest<CreateAstronautDutyResult>
     {
+        /// <summary>
+        /// Person Name
+        /// </summary>
         public required string Name { get; set; }
 
         public required string Rank { get; set; }
