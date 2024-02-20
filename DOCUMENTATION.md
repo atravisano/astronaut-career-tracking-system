@@ -60,6 +60,7 @@ As a side note, it could be captured per endpoint but that would not be a scalab
 
 * Should use .NET 8, .NET 7 EOL is May 2024
 * Understand if it's necessary to maintain `CurrentRank` and `CurrentDutyTitle` in `AstronautDetail` rather than query `AstronautDuty` to prevent duplicates
+* The logic in `CreateAstronautDutyHandler` could be simplified by utilizing EF change tracking with the additional benefit of making fewer trips to the DB
 * Should align as a team to determine if the use of Dapper is necessary
   * Dapper has been known to be faster, however with latest EF Core improvements Dapper may not have as much of an advantage
   * Writing raw sql queries can be convenient but can require more maintenance
