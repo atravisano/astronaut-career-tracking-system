@@ -59,6 +59,7 @@ As a side note, it could be captured per endpoint but that would not be a scalab
 ## Wishlist
 
 * Should use .NET 8, .NET 7 EOL is May 2024
+* Understand if it's necessary to maintain current stats in columns rather than query to prevent duplicates
 * Should align as a team to determine if the use of Dapper is necessary
   * Dapper has been known to be faster, however with latest EF Core improvements Dapper may not have as much of an advantage
   * Writing raw sql queries can be convenient but can require more maintenance
@@ -73,4 +74,7 @@ As a side note, it could be captured per endpoint but that would not be a scalab
 * POST endpoints should return 201 when successfull and a `Location` header on how to GET the data
   * This can also be done by using `CreatedAtAction`
 * Seperate business logic (services) and data layers (repositories, contexts) into seperate projects for easier reusability, scalability, and testing
+  * This would also require changing thrown exceptions such as `BadHttpRequestException` to be more generic so it does not have a dependency on ASP.NET Core Http packages
 * Seperate each class within a class for easier readability
+* Create a reusable static strings class for strings such as duty title of `"RETIRED"`
+* Should be consistent in usage of EF async vs sync methods
