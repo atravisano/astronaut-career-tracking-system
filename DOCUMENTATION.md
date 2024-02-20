@@ -34,3 +34,24 @@ Already implemented in `CreateAstronautDuty`.
 > A Person's Career End Date is one day before the Retired Duty Start Date.
 
 Already implemented in `CreateAstronautDuty`.
+
+## Improve defensive coding
+
+* Resolve SQL injection
+
+## Add unit tests
+
+* identify the most impactful methods requiring tests, `CreateAstronautDutyHandler` has the most business logic.
+* reach >50% code coverage
+
+## Implement process logging
+
+* Log exceptions
+* Log successes
+* Store the logs in the database
+
+This could be done by using NuGet libraries such as Serilog, OpenTelemetry dotnet, or custom middleware logic.
+
+Alternatively, in an Azure environment, Azure App Insights can be used to capture this information with minimal code changes.
+
+As a side note, it could be captured per endpoint but that would not be a scalable solution.
