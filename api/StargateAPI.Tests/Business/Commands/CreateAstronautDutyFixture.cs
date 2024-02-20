@@ -3,13 +3,7 @@ using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using StargateAPI.Business.Commands;
 using StargateAPI.Business.Data;
-using System;
-using System.Collections.Generic;
 using System.Data.Common;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StargateAPI.Tests.Business.Commands
 {
@@ -55,6 +49,7 @@ namespace StargateAPI.Tests.Business.Commands
         public void Dispose()
         {
             _connection.Dispose();
+            GC.SuppressFinalize(this);
         }
 
         private StargateContext CreateContext()
