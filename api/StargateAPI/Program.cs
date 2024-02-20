@@ -11,7 +11,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<StargateContext>(options => 
-    options.UseSqlite(builder.Configuration.GetConnectionString("StarbaseApiDatabase")));
+    options.UseSqlite(builder.Configuration.GetConnectionString("StarbaseApiDatabase"))
+      // Note: Logging sql queries should only be configured for debugging or non-production environments.
+      .LogTo(Console.WriteLine)
+    );
 
 builder.Services.AddMediatR(cfg =>
 {
