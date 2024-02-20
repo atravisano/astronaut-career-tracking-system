@@ -72,3 +72,4 @@ As a side note, it could be captured per endpoint but that would not be a scalab
   * If in agreement, refactor usage of `GetResponse` and related `try/catch` into middleware
 * POST endpoints should return 201 when successfull and a `Location` header on how to GET the data
   * This can also be done by using `CreatedAtAction`
+* Seperate business logic and data layers into seperate projects for easier reusability, scalability, and testing
