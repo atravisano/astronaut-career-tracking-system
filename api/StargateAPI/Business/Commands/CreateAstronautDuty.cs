@@ -56,9 +56,9 @@ namespace StargateAPI.Business.Commands
         public async Task<CreateAstronautDutyResult> Handle(CreateAstronautDuty request, CancellationToken cancellationToken)
         {
 
-            var query = $"SELECT * FROM [Person] WHERE \'{request.Name}\' = Name";
+            var query = $"SELECT * FROM [Person] WHERE @Name = Name";
 
-            var person = await _context.Connection.QueryFirstOrDefaultAsync<Person>(query);
+            var person = await _context.Connection.QueryFirstOrDefaultAsync<Person>(query, new { request.Name });
 
             query = $"SELECT * FROM [AstronautDetail] WHERE {person.Id} = PersonId";
 
