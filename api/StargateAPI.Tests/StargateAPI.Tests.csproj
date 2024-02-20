@@ -22,4 +22,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\StargateAPI\StargateAPI.csproj" />
+  </ItemGroup>
+
 </Project>
