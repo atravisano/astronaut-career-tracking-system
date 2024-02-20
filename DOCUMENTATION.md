@@ -9,11 +9,11 @@
 
 > A Person is uniquely identified by their Name.
 
-Was already implemented, `CreatePersonPreProcessor` to be configured in `Program.cs`
+Was already implemented, `CreatePersonPreProcessor` needed to be configured in `Program.cs`
 
 > A Person who has not had an astronaut assignment will not have Astronaut records.
 
-already implemented, no changes required.
+Already implemented, no changes required.
 
 > A Person will only ever hold one current Astronaut Duty Title, Start Date, and Rank at a time.
 
@@ -59,7 +59,7 @@ As a side note, it could be captured per endpoint but that would not be a scalab
 ## Wishlist
 
 * Should use .NET 8, .NET 7 EOL is May 2024
-* Understand if it's necessary to maintain current stats in columns rather than query to prevent duplicates
+* Understand if it's necessary to maintain `CurrentRank` and `CurrentDutyTitle` in `AstronautDetail` rather than query `AstronautDuty` to prevent duplicates
 * Should align as a team to determine if the use of Dapper is necessary
   * Dapper has been known to be faster, however with latest EF Core improvements Dapper may not have as much of an advantage
   * Writing raw sql queries can be convenient but can require more maintenance
